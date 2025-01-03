@@ -1,28 +1,36 @@
 async function sendMessage() {
-    const user_input = document.getElementById("user_input").value;
-
-    const response = await fetch("", {
-        method: "POST",
-        headers: {"Content-Type": "application/x-www-form-urlencoded"},
-        body: `user_input=${user_input}`
-    });
-
-    const data = await response.json();
-    
-    // Adiciona a pergunta e a resposta ao chatbox
+    const userInput = document.getElementById("user_input");
     const chatbox = document.getElementById("chatbox");
-    chatbox.innerHTML += `<p><b>Você:</b> ${user_input}</p>`;
-    chatbox.innerHTML += `<p><b>PagaSó:</b> ${data.response}</p>`;
+    const userMessage = userInput.value.trim();
 
-    // Limita o número de mensagens no chatbox (exemplo: 10 perguntas e respostas)
-    const maxMessages = 10;
-    const messages = chatbox.getElementsByTagName("p");
+    if (!userMessage) return;
 
-    if (messages.length > maxMessages * 2) { // Multiplicamos por 2 porque temos pergunta e resposta
-        chatbox.removeChild(messages[0]);
-        chatbox.removeChild(messages[1]);
+    // Adiciona a mensagem do usuário
+    chatbox.innerHTML += `<div class="message user"><b>Você:</b> ${userMessage}</div>`;
+
+    // Limpa o campo de entrada
+    userInput.value = "";
+
+    try {
+        const response = await fetch("", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: `user_input=${encodeURIComponent(userMessage)}`
+        });
+
+        if (!response.ok) {
+            throw new Error("Erro ao se comunicar com o servidor.");
+        }
+
+        const data = await response.json();
+
+        // Adiciona a resposta do bot
+        chatbox.innerHTML += `<div class="message bot"><b>ETHAM:</b> ${data.response}</div>`;
+    } catch (error) {
+        chatbox.innerHTML += `<div class="message bot"><b>ETHAM:</b> Ocorreu um erro, tente novamente.</div>`;
+        console.error(error);
     }
 
-    // Limpa o campo de entrada de texto
-    document.getElementById("user_input").value = "";
+    // Rolar automaticamente para a última mensagem
+    chatbox.scrollTop = chatbox.scrollHeight;
 }

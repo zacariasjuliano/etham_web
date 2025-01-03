@@ -2,29 +2,21 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ETHAM Chatbot</title>
-    <link rel="stylesheet" href="/static/style.css"> <!-- Vinculando o arquivo CSS externo -->
-    <script>
-        async function sendMessage() {
-            const user_input = document.getElementById("user_input").value;
-
-            const response = await fetch("", {
-                method: "POST",
-                headers: {"Content-Type": "application/x-www-form-urlencoded"},
-                body: `user_input=${user_input}`
-            });
-
-            const data = await response.json();
-            document.getElementById("chatbox").innerHTML += `<div class="question"><p id="question">${user_input}</p> <p id="user_question"><b>Você</b></p></div>`;
-            document.getElementById("chatbox").innerHTML += `<div class="anwser"><p id="anwser">${data.response}</p> <p id="user_anwser"><b>PagaSó</b></p></div>`;
-        }
-
-        document.getElementById("user_input").value("");
-    </script>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/etham.js" defer></script>
 </head>
 <body>
-    <div id="chatbox"></div>
-    <input type="text" id="user_input" placeholder="Digite sua pergunta">
-    <button onclick="sendMessage()">Enviar</button>
+    <header>
+        <h1>ETHAM Chatbot</h1>
+    </header>
+    <main>
+        <div id="chatbox"></div>
+    </main>
+    <footer>
+        <input type="text" id="user_input" placeholder="Digite sua pergunta...">
+        <button onclick="sendMessage()">Enviar</button>
+    </footer>
 </body>
 </html>

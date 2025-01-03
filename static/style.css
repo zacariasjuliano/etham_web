@@ -1,54 +1,76 @@
-/* style.css */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    /*display: flex;*/
-    flex-direction: column;
-    justify-content: flex-end;
-    /*align-items: center;*/
-    height: 100vh;
+/* Reset de estilo básico */
+body, html {
     margin: 0;
-    padding: 20px;
-    overflow: hidden;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #f9fafc;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
-h1 {
+/* Cabeçalho */
+header {
     text-align: center;
-    color: #333;
-    font-size: 2em;
-    margin-bottom: 20px;
+    background-color: #2a9d8f;
+    color: white;
+    padding: 5px;
+    font-size: 1.2em;
+}
+
+/* Área principal do chat */
+main {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    margin: 10px;
+    border-radius: 8px;
 }
 
 #chatbox {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 100%;
-    max-width: 96%;
-    height: 80%;
-    /*overflow-y: auto;*/
-    margin-bottom: 20px;
-    font-size: 1.1em;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-#chatbox p {
-    margin: 10px 0;
+/* Mensagens */
+.message {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 80%;
 }
 
+.message.user {
+    align-self: flex-end;
+    background-color: #e1f5fe;
+    text-align: right;
+}
+
+.message.bot {
+    align-self: flex-start;
+    background-color: #f1f8e9;
+    text-align: left;
+}
+
+/* Rodapé */
+footer {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-top: 1px solid #ddd;
+}
 
 #user_input {
-    width: 85%;
+    flex: 1;
     padding: 10px;
-    font-size: 1em;
-    border: 2px solid #ddd;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
+    font-size: 1em;
 }
 
 button {
@@ -56,64 +78,11 @@ button {
     color: white;
     border: none;
     padding: 10px 20px;
-    font-size: 1em;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
-    position: fixed;
-    bottom: 4.5%;
-    right: 2.5%;
+    font-size: 1em;
 }
 
 button:hover {
     background-color: #21867a;
-}
-
-button:focus {
-    outline: none;
-}
-
-#question{
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*justify-content: flex-end;*/
-    /*align-items: right;*/
-}
-
-#user_question{
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*justify-content: flex-end;*/
-    /*align-items: left;*/
-    color: #b81717;
-}
-
-#anwser{
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*justify-content: flex-end;*/
-    /*align-items: left;*/
-    /*color: #b81717;*/
-}
-
-#user_anwser{
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*justify-content: flex-end;*/
-    /*align-items: left;*/
-    color: #b81717;
-}
-
-.question{
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*justify-content: flex-end;*/
-    /*align-items: right;*/
-}
-
-.anwser{
-    display: flex;
-    /*flex-direction: column;*/
-    justify-content: flex-end;
-    /*align-items: left;*/
 }
