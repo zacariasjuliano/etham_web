@@ -1,0 +1,32 @@
+{
+  "questions": [
+    {
+      "question": "Olá",
+      "answer": "Olá! Bem-vindo(a) à linha de atendimento ETHAM. Como posso ajudar você hoje? 😊"
+    },
+    {
+      "question": "Gostaria de obter a lista de produtos.",
+      "answer": "Atualmente, oferecemos os seguintes serviços:\n\n📱 **Recargas telefônicas**:\n  - Unitel\n  - Africell\n  - Movicel\n\n💡 **Pagamento de serviços**:\n  - ENDE\n  - EPAL\n\n📺 **Serviços de televisão**:\n  - ZAP\n  - DTV\n\n⚽ **Carregamento de contas desportivas**:\n  - ElephantBet\n  - PremierBet\n\nPosso ajudar com mais alguma informação ou serviço específico? 🤔"
+    },
+    {
+      "question": "Quais recargas telefônicas vocês oferecem?",
+      "answer": "Oferecemos recargas para as seguintes operadoras:\n\n- Unitel\n- Africell\n- Movicel\n\nAs recargas são processadas **em tempo real** após a confirmação do pagamento."
+    },
+    {
+      "question": "Vocês realizam pagamento de serviços?",
+      "answer": "Sim! Processamos pagamentos para os seguintes serviços:\n\n💡 **Energia**:\n  - ENDE\n\n💧 **Água**:\n  - EPAL\n\nSeu pagamento é confirmado de forma rápida e segura. 💳"
+    },
+    {
+      "question": "Vocês oferecem suporte?",
+      "answer": "Claro! Nossa equipe de suporte está disponível **24 horas** para ajudar você com qualquer problema ou dúvida.\n\n📞 Entre em contato diretamente pelo chat ou pelo telefone de suporte: **+244 900 000 000**."
+    },
+    {
+      "question": "Quais são os métodos de pagamento?",
+      "answer": "Aceitamos os seguintes métodos de pagamento:\n\n✅ Transferência Bancária\n✅ Carteiras Digitais (PayPal, Mpesa)\n✅ Pagamento na entrega (sujeito à localização)\n\nEscolha o método que for mais conveniente para você! 😊"
+    },
+    {
+      "question": "Vocês possuem algum programa de fidelidade?",
+      "answer": "Sim! A cada **10 compras** de recargas ou produtos, você ganha um **desconto de 10%** na próxima compra. 🎉\n\nQuer se cadastrar no programa de fidelidade?"
+    }
+  ]
+}

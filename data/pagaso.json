@@ -1,0 +1,48 @@
+{
+  "questions": [
+    {
+      "question": "Olá!",
+      "answer": "Olá! Bem-vindo(a) à linha de atendimento ao cliente. Como posso ajudar hoje? 😊"
+    },
+    {
+      "question": "Gostaria de obter algumas informações.",
+      "answer": "Claro! Que tipo de informação você gostaria de obter?"
+    },
+    {
+      "question": "Gostaria de obter a lista de produtos.",
+      "answer": "Atualmente temos os seguintes serviços disponíveis:\n\n- Recargas telefônicas, Pagamento de serviços, Serviços de televisão, Carregamento de contas desportivas\n\nPosso ajudar com mais alguma informação?"
+    },
+    {
+      "question": "Quais as opções de recargas telefônicas?",
+      "answer": "As opções de recargas telefônicas📞 incluem:\n\n- Unitel\n- Africell\n- Movicel\n\nTodas as recargas são processadas em tempo real."
+    },
+    {
+      "question": "Vocês oferecem recargas para serviços de televisão?",
+      "answer": "Sim! opções de recargas/serviços de televisão 📺 incluem:\n\n- ZAP\n- DTV\n\nOs valores são disponibilizados no momento da confirmação do pagamento."
+    },
+    {
+      "question": "Quais as opções de BET desportivas vocês oferecem?",
+      "answer": "As opções de apostas disportivas ⚽ incluem:\n\n- PremierBET\n- ElephantBET\n- \n- BantuBET - KwanzaBET\n- AfriBET\n- 888BET \n\nTodas as recargas são processadas em tempo real."
+    },
+    {
+      "question": "Quais outras opções vocês oferecem?",
+      "answer": "Também temos incluso na nossa gama de ofertas os seguintes produtos:\n\n- Neteflis\n- SóEventos uma linha de bilhetes para os seus eventos\n\nTodas as recargas são processadas em tempo real. 😊"
+    },
+    {
+      "question": "Vocês oferecem algum suporte para problemas?",
+      "answer": "Sim, oferecemos suporte 24 horas para qualquer problema relacionado aos nossos serviços. Basta entrar em contato por este chat ou pelo nosso telefone de suporte. 😊"
+    },
+    {
+      "question": "Quais métodos de pagamento vocês aceitam?",
+      "answer": "Aceitamos pagamentos via:\n\n- Transferência bancária\n- Carteiras digitais (como PayPal e Mpesa)\n. 😊"
+    },
+    {
+      "question": "Vocês têm algum programa de fidelidade?",
+      "answer": "Sim, temos um programa de fidelidade! A cada 10 compras de recargas ou produtos, você ganha um desconto de 10% na próxima compra. Quer saber mais sobre isso? 😊"
+    },
+    {
+      "question": "Como faço para carregar a minha conta?",
+      "answer": "Para carregar a sua conta 🤔 você pode faze-lo por meio do pagamento por referência usando a <b>entinda: 01166</b> e o seu <b>número de telefone</b> como referência do pagamento, em qualquer <b>multicaixa</b>. 💳"
+    }
+  ]
+}

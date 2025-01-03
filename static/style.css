@@ -1,0 +1,119 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    /*display: flex;*/
+    flex-direction: column;
+    justify-content: flex-end;
+    /*align-items: center;*/
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    overflow: hidden;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#chatbox {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 96%;
+    height: 80%;
+    /*overflow-y: auto;*/
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+#chatbox p {
+    margin: 10px 0;
+}
+
+
+#user_input {
+    width: 85%;
+    padding: 10px;
+    font-size: 1em;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+}
+
+button {
+    background-color: #2a9d8f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: fixed;
+    bottom: 4.5%;
+    right: 2.5%;
+}
+
+button:hover {
+    background-color: #21867a;
+}
+
+button:focus {
+    outline: none;
+}
+
+#question{
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*justify-content: flex-end;*/
+    /*align-items: right;*/
+}
+
+#user_question{
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*justify-content: flex-end;*/
+    /*align-items: left;*/
+    color: #b81717;
+}
+
+#anwser{
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*justify-content: flex-end;*/
+    /*align-items: left;*/
+    /*color: #b81717;*/
+}
+
+#user_anwser{
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*justify-content: flex-end;*/
+    /*align-items: left;*/
+    color: #b81717;
+}
+
+.question{
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*justify-content: flex-end;*/
+    /*align-items: right;*/
+}
+
+.anwser{
+    display: flex;
+    /*flex-direction: column;*/
+    justify-content: flex-end;
+    /*align-items: left;*/
+}
