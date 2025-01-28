@@ -46,22 +46,9 @@ def find_best_match(user_question: str, questions: list):
     return matches[0] if matches else None
 
 
-# Rota de login
-@app.route("/", methods=["GET", "POST"])
-def login():
-    if request.method == "POST":
-        username = request.form.get("username").strip().lower()
-        if username:
-            session['username'] = username
-            return redirect(url_for("chat", username=username))
-    return render_template("index.html")
-
-
 # Rota do chat
-@app.route("/chat/<username>", methods=["GET", "POST"])
-def chat(username):
-    if 'username' not in session or session['username'] != username:
-        return redirect(url_for("login"))
+@app.route("/", methods=["GET", "POST"])
+def chat(username="etham"):
 
     file_name = f"{username}.json"
     knowledge_base = read_file_content(file_name)
@@ -81,7 +68,7 @@ def chat(username):
                 knowledge_base["questions"].append({"question": user_input, "answer": new_answer})
                 update_file_content(file_name, knowledge_base)
                 return jsonify({"response": "Obrigado por me ensinar algo novo!"})
-            return jsonify({"response": "Não sei como responder. Pode me ensinar?"})
+            return jsonify({"response": "Não sei como responder. Irei reencaminhar para o operador!"})
 
     return render_template("chat.html", username=username)
 

@@ -25,9 +25,9 @@ async function sendMessage() {
         const data = await response.json();
 
         // Adiciona a resposta do bot
-        chatbox.innerHTML += `<div class="message bot"><b>ETHAM:</b> ${data.response}</div>`;
+        chatbox.innerHTML += `<div class="message bot"><b>PagaSó:</b> ${data.response}</div>`;
     } catch (error) {
-        chatbox.innerHTML += `<div class="message bot"><b>ETHAM:</b> Ocorreu um erro, tente novamente.</div>`;
+        chatbox.innerHTML += `<div class="message bot"><b>PagaSó:</b> Ocorreu um erro, tente novamente.</div>`;
         console.error(error);
     }
 
