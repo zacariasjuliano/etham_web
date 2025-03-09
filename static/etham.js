@@ -6,7 +6,7 @@ async function sendMessage() {
     if (!userMessage) return;
 
     // Adiciona a mensagem do usuário
-    chatbox.innerHTML += `<div class="message user"><b>Você:</b> ${userMessage}</div>`;
+    chatbox.innerHTML += `<div class="message user"><b> </b> ${userMessage}</div>`;
 
     // Limpa o campo de entrada
     userInput.value = "";
@@ -25,9 +25,9 @@ async function sendMessage() {
         const data = await response.json();
 
         // Adiciona a resposta do bot
-        chatbox.innerHTML += `<div class="message bot"><b>PagaSó:</b> ${data.response}</div>`;
+        chatbox.innerHTML += `<div class="message bot"><b> </b> ${data.response}</div>`;
     } catch (error) {
-        chatbox.innerHTML += `<div class="message bot"><b>PagaSó:</b> Ocorreu um erro, tente novamente.</div>`;
+        chatbox.innerHTML += `<div class="message bot"><b> </b> Ocorreu um erro, tente novamente.</div>`;
         console.error(error);
     }
 
