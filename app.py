@@ -1,10 +1,10 @@
 from flask import Flask, request, render_template, redirect, url_for, jsonify, session
 import os
 import json
-from difflib import get_close_matches
+from rapidfuzz import process
+
 
 app = Flask(__name__)
-app.secret_key = "sua_chave_secreta"  # Altere para algo seguro em produção
 
 DATA_FOLDER = "data"
 
@@ -42,29 +42,19 @@ def update_file_content(file_name: str, data: dict):
 
 # Função para encontrar a melhor correspondência
 def find_best_match(user_question: str, questions: list):
-    matches = get_close_matches(user_question, questions, n=1, cutoff=0.6)
-    return matches[0] if matches else None
-
-
-# Rota de login
-@app.route("/", methods=["GET", "POST"])
-def login():
-    if request.method == "POST":
-        username = request.form.get("username").strip().lower()
-        if username:
-            session['username'] = username
-            return redirect(url_for("chat", username=username))
-    return render_template("index.html")
+    best_match = process.extractOne(user_question, questions, score_cutoff=72)  # 72 define um nível mínimo de precisão
+    return best_match[0] if best_match else None
 
 
 # Rota do chat
-@app.route("/chat/<username>", methods=["GET", "POST"])
-def chat(username):
-    if 'username' not in session or session['username'] != username:
-        return redirect(url_for("login"))
+@app.route("/", methods=["GET", "POST"])
+def chat(username="etham"):
 
     file_name = f"{username}.json"
     knowledge_base = read_file_content(file_name)
+
+    new_file_name = f"etham_learning.json"
+    new_knowledge_base = read_file_content(new_file_name)
 
     if request.method == "POST":
         user_input = request.form.get("user_input").strip()
@@ -76,12 +66,9 @@ def chat(username):
                 if q["question"].lower() == best_match:
                     return jsonify({"response": q["answer"]})
         else:
-            new_answer = request.form.get("new_answer")
-            if new_answer:
-                knowledge_base["questions"].append({"question": user_input, "answer": new_answer})
-                update_file_content(file_name, knowledge_base)
-                return jsonify({"response": "Obrigado por me ensinar algo novo!"})
-            return jsonify({"response": "Não sei como responder. Pode me ensinar?"})
+            new_knowledge_base["questions"].append({"question": user_input, "answer": ""})
+            update_file_content(new_file_name, new_knowledge_base)
+            return jsonify({"response": "De momento não sei como formular uma resposta para a sua pergunta!"})
 
     return render_template("chat.html", username=username)
 
